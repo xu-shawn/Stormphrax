@@ -892,7 +892,7 @@ namespace stormphrax::search
 				// node, or the conditions above for LMR were not met) then do an
 				// unreduced zero-window search to check if this move can raise alpha
 				else if (!PvNode || legalMoves > 1)
-					score = -search(thread, curr.pv, newDepth, ply + 1,
+					score = -search(thread, curr.pv, newDepth - (r > 3), ply + 1,
 						moveStackIdx + 1, -alpha - 1, -alpha, !cutnode);
 
 				// if we're in a PV node and
